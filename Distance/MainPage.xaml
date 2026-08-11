@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Distance.MainPage"
-             Title="Distância entre dois Pontos">
-
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+           x:Class="Distance.MainPage" Title="Distância entre dois Pontos">
+    
     <ScrollView>
         <VerticalStackLayout Padding="10" Spacing="25">
             <Image Source="dist.png" Aspect="AspectFit"/>
+                        
             <Label Text="Digite os valores para o primeiro ponto: " FontSize="15"/>
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
                 <Label Text="(" FontSize="Large"/>
@@ -16,6 +16,44 @@
                 <Label Text="," FontSize="Large"/>
                 <Entry x:Name="Az" Placeholder="az" Keyboard="Numeric"/>
                 <Label Text=")" FontSize="Large"/>
+            </HorizontalStackLayout>
+            
+            <Label Text="Digite os valores para o segundo ponto: " FontSize="15"/>
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="(" FontSize="Large"/>
+                <Entry x:Name="Bx" Placeholder="bx" Keyboard="Numeric"/>
+                <Label Text="," FontSize="Large"/>
+                <Entry x:Name="By" Placeholder="by" Keyboard="Numeric"/>
+                <Label Text="," FontSize="Large"/>
+                <Entry x:Name="Bz" Placeholder="bz" Keyboard="Numeric"/>
+                <Label Text=")" FontSize="Large"/>
+            </HorizontalStackLayout>
+            
+            <Button x:Name="btCalcularDistancia" Text="Calcular distancia"
+                    HorizontalOptions="Fill" Clicked="btCalcularDistancia_Clicked"/>
+                        
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="A distancia entre o ponto A e B é : " FontSize="15"/>
+                <Label x:Name="lbResultado" Text="0,00" FontSize="20" FontAttributes="Bold" TextColor="Red"/>
+            </HorizontalStackLayout>
+            
+            <Image Source="bhaskaraf.png" Aspect="AspectFill"/>
+            <Label Text="Digite os valores para A, B e C: " FontSize="15"/>
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="(" FontSize="Large"/>
+                <Entry x:Name="A" Placeholder="a" Keyboard="Numeric"/>
+                <Label Text="," FontSize="Large"/>
+                <Entry x:Name="B" Placeholder="b" Keyboard="Numeric"/>
+                <Label Text="," FontSize="Large"/>
+                <Entry x:Name="C" Placeholder="c" Keyboard="Numeric"/>
+                <Label Text=")" FontSize="Large"/>
+            </HorizontalStackLayout>
+            <Button x:Name="btCalcularBhaskara" Text="Calcular Bhaskara" HorizontalOptions="Fill" Clicked="btCalcularBhaskara_Clicked"/>
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="O valor de X¹ = " FontSize="15"/>
+                <Label x:Name="lbResultadoX1" Text="0,00" FontSize="20" FontAttributes="Bold" TextColor="Red"/>
+                <Label Text="O valor de X² = " FontSize="15"/>
+                <Label x:Name="lbResultadoX2" Text="0,00" FontSize="20" FontAttributes="Bold" TextColor="Red"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
